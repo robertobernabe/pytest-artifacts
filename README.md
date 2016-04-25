@@ -1,2 +1,2 @@
 # pytest-artifacts
-[![Build Status](https://travis-ci.org/robertobernabe/pytest-artifacts.svg?branch=master)](https://travis-ci.org/robertobernabe/pytest-artifacts)
+[![Travis](https://img.shields.io/travis/robertobernabe/pytest-artifacts.svg?maxAge=2592000)]()
