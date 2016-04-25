@@ -44,7 +44,7 @@ if __name__ == "__main__":
     setup(
         name=_name, version=_version,
         description=_description,
-        author='Florian Schäffeler',
+        author='Florian Schaeffeler',
         author_email='florian.schaeffeler@gmail.com',
         entry_points={
             "console_scripts": [],
