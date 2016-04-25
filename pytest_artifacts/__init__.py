@@ -8,7 +8,7 @@ def pytest_addoption(parser):
     This function must be implemented in a plugin and is called once at the beginning of a test run.
     http://pytest.org/latest/plugins.html?highlight=hooks#_pytest.hookspec.pytest_addoption
     """
-    group = parser.getgroup('SWAT APL RS Tests')
+    group = parser.getgroup('pytest artifacts')
 
     group.addoption(
         OPTION_COLLECT_ARTIFACTS,
