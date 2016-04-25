@@ -12,7 +12,7 @@ def pytest_addoption(parser):
 
     group.addoption(
         OPTION_COLLECT_ARTIFACTS,
-        default=True,
+        default=None,
         help=""
     )
 
