@@ -36,6 +36,8 @@ class ArtifactCollector(object):
 
     def add_search_path(self, searchPath, extensions=None, recursive=False):
         log.debug("add path %s for searching artifacts %s" % (searchPath, extensions))
+        if isinstance(searchPath, str):
+            searchPath = LocalPath(searchPath)
         self.lookupPlan.append((searchPath, extensions, recursive))
 
     def collect(self):
@@ -47,12 +49,12 @@ class ArtifactCollector(object):
 
     def zip_artifact_collection(self, zipFilePath):
         _rZipFilePath = None
-        with zipfile.ZipFile(zipFilePath, 'w', compression=zipfile.ZIP_DEFLATED) as zip:
+        with zipfile.ZipFile(str(zipFilePath), 'w', compression=zipfile.ZIP_DEFLATED) as zip:
             for collection in self.collect():
                 if collection:
                     for artifactFilePath in collection:
                         zip.write(artifactFilePath, os.path.basename(artifactFilePath))
-                    _rZipFilePath = LocalPath(LocalPath(zipFilePath).abspath())
+                    _rZipFilePath = os.path.abspath(LocalPath(zipFilePath))
         return _rZipFilePath
 
 
