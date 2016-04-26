@@ -19,6 +19,8 @@ def pytest_addoption(parser):
 
     group.addoption(
         OPTION_COLLECT_ARTIFACTS,
+        action="store",
+        nargs="*",
         default=None,
         help=""
     )
@@ -32,8 +34,13 @@ def pytest_sessionfinish(session, exitstatus):
         outputPath.mkdir()
         zipFileOutputPath = outputPath.join("artifacts.zip")
         a = ArtifactCollector()
-        for ext in collectArtifactsArgs.split(";"):
-            a.add_search_path(os.getcwd(), ext, recursive=True)
+        for item in collectArtifactsArgs:
+            if ":" in item:
+                searchPath, ext = item.split(":")[1:]
+            else:
+                searchPath = os.getcwd()
+                ext = item
+            a.add_search_path(searchPath, ext, recursive=True)
         collectedArtifacts = [item for item in a.collect()]
         a.zip_artifact_collection(zipFileOutputPath)
 

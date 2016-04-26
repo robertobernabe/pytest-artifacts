@@ -30,8 +30,6 @@ if __name__ == '__main__':
     import sys
     log.addHandler(logging.StreamHandler(stream=sys.stdout))
     log.setLevel(logging.DEBUG)
-    #for filePath in find_files(os.path.expanduser("~"), r'tmp\*.zip'):
-    #    print(filePath)
-    #    assert filePath.isfile()
-
-    print(fnmatch.fnmatch(r"C:\Users\florian.schaeffeler\tmp\2016-03-30_ME_1-0-16-10-11.zip", r'*.zip'))
+    for filePath in find_files(os.path.expanduser("~"), r'*.zip'):
+        print(filePath)
+        assert filePath.isfile()
