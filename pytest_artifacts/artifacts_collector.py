@@ -24,14 +24,11 @@ class ArtifactCollector(object):
             yield glob.glob(pattern)
 
     def zip_artifact_collection(self, zipFilePath, artifactsToCompress):
-        _rZipFilePath = None
         with zipfile.ZipFile(str(zipFilePath), 'w', compression=zipfile.ZIP_DEFLATED) as zip:
             for artifactFilePath in artifactsToCompress:
                 zip.write(
                     str(artifactFilePath),
                     os.path.basename(str(artifactFilePath)))
-                _rZipFilePath = os.path.abspath(zipFilePath)
-        return _rZipFilePath
 
 
 def human_readable_size(size):
