@@ -56,7 +56,7 @@ def pytest_sessionfinish(session, exitstatus):
         if session.config._artifactsOutputPath.exists:
             try:
                 session.config._artifactsOutputPath.remove(ignore_errors=True)
-            except: #
+            except:
                 pass
         session.config._artifactsOutputPath.mkdir()
 
