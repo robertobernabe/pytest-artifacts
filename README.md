@@ -14,9 +14,9 @@ You will need the following prerequisites in order to use pytest-artifacts:
 
 
 
-## Installation:
+[comment]: ## Installation:
     
-    pip install pytest-artifacts
+[comment]: pip install pytest-artifacts
 
 
 ## Usage:
