@@ -16,7 +16,7 @@ def pytest_addoption(parser):
     http://pytest.org/latest/plugins.html?
     highlight=hooks#_pytest.hookspec.pytest_addoption
     """
-    group = parser.getgroup('pytest artifacts')
+    group = parser.getgroup("artifacts")
 
     group.addoption(
         OPTION_COLLECT_ARTIFACTS,
