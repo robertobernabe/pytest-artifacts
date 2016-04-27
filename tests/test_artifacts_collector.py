@@ -12,10 +12,9 @@ def directoryWithCollectableFiles(tmpdir):
 
 class TestArtifactCollector(object):
 
-    def test_find_files(self, directoryWithCollectableFiles):
+    def test_collect_files(self, directoryWithCollectableFiles):
         a = ArtifactCollector()
-        a.add_search_path(directoryWithCollectableFiles)
-        a.collect()
+        a.add_search_pattern("%s/*" % directoryWithCollectableFiles)
 
-        for collection in a.collect():
+        for collection in a.collect_using_glob():
             assert len(collection) == 2
