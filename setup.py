@@ -1,48 +1,16 @@
-import os
-import sys
-import io
 from setuptools import setup
 from setuptools import find_packages
 
-HERE = os.path.dirname(__file__)
-buildNumberFile = os.path.join(HERE, "BUILD_NUMBER")
-versionFile = os.path.join(HERE, "VERSION")
-
 # PACKAGE NAME AND VERSION
 _name = "pytest-artifacts"
-_base_version = "1.0.{buildNumber}"
+_version = "0.1.0"
 
-_description = "Avira SWAT APL RS Tests"
-
-# WILL BE USED IF BUILD LOCALLY
-buildNumber = "dev"
-
-if os.path.exists(versionFile):
-    with io.open(versionFile, "r") as f:
-        _version = f.read().split("=")[1]
-else:
-    _version = _base_version.format(buildNumber=buildNumber)
-
+_description = "Plugin for py.test to collect test artifacts"
 
 if __name__ == "__main__":
-
-    if "--buildNumber" in sys.argv:
-        i = sys.argv.index("--buildNumber") + 1
-        buildNumber = sys.argv[i]
-        print("Found build number '{0}'".format(buildNumber))
-        print("Try to create build number file: {0}".format(buildNumberFile))
-        with open(buildNumberFile, 'w') as f:
-            f.write(buildNumber)
-        _version = _base_version.format(buildNumber=buildNumber)
-        sys.argv.remove("--buildNumber")
-        sys.argv.remove(buildNumber)
-
-        with open(versionFile, 'w') as f:
-            print("Try to create version file: {0}".format(versionFile))
-            f.write("version={0}".format(_version))
-
     setup(
-        name=_name, version=_version,
+        name=_name,
+        version=_version,
         description=_description,
         author='Florian Schaeffeler',
         author_email='florian.schaeffeler@gmail.com',

@@ -1,7 +1,5 @@
 from py._path.local import LocalPath
 import pytest
-import os
-import os.path
 
 from pytest_artifacts.collector import find_files
 
@@ -17,6 +15,7 @@ def create_subdirectories(path, amount, depth):
         if not depth == 0:
             depth -= 1
             create_subdirectories(p, 1, depth)
+
 
 @pytest.fixture
 def testFilesSearchDirectory(tmpdir):

@@ -55,4 +55,3 @@ def test_pytest_artifacts_collect_in_custom_path_and_compress(testdir):
     assert "test.log" in result.stdout.str()
     assert "test.md5" in result.stdout.str()
     assert testdir.tmpdir.join("pytest-artifacts").join("pytest-artifacts.zip").exists()
-
