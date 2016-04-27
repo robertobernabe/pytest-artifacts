@@ -37,8 +37,8 @@ def test_pytest_artifacts_collect_in_custom_path(testdir):
 
     result = testdir.runpytest(
         "--collect-artifacts",
-        r"%s\*.log" % str(testdir.tmpdir),
-        r"%s\*.md5" % str(testdir.tmpdir))
+        "%s/*.log" % str(testdir.tmpdir),
+        "%s/*.md5" % str(testdir.tmpdir))
     assert 'Collected the following artifacts' in result.stdout.str()
     assert "test.log" in result.stdout.str()
     assert "test.md5" in result.stdout.str()
