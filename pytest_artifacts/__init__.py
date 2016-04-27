@@ -1,4 +1,5 @@
 import os
+import sys
 import pytest
 import _pytest
 from py._path.local import LocalPath
@@ -36,7 +37,9 @@ def pytest_sessionfinish(session, exitstatus):
         a = ArtifactCollector()
         for item in collectArtifactsArgs:
             if ":" in item:
-                searchPath, ext = item.split(":")[1:]
+                searchPath, ext = (item.split(":")[1:]
+                                   if sys.platform == 'win32'
+                                   else item.split(":"))
             else:
                 searchPath = os.getcwd()
                 ext = item
