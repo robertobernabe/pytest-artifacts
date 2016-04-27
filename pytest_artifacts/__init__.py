@@ -21,10 +21,10 @@ def pytest_addoption(parser):
     group.addoption(
         OPTION_COLLECT_ARTIFACTS,
         action="store",
-        metavar='<path_to_search>:<filepattern_to_search_for>',
+        metavar='pattern',
         nargs="*",
         default=None,
-        help=""
+        help="Search for artifacts /path/to/dir/file*pattern.ext"
     )
 
     group.addoption(
