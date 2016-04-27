@@ -13,12 +13,6 @@ You will need the following prerequisites in order to use pytest-artifacts:
 - Python 2.7, 3.4 or 3.5
 
 
-
-[comment]: ## Installation:
-    
-[comment]: pip install pytest-artifacts
-
-
 ## Usage:
 
     py.test --collect-artifacts C:\ProgramData\Dropbox\Update\Log\*.log* tests\
