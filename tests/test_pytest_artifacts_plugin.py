@@ -1,12 +1,4 @@
-import pytest
-import sys
-
 pytest_plugins = "pytester",  # to get testdir fixture
-
-runsOnlyOnWindows = pytest.mark.skipif(
-    not (sys.platform == 'win32'), reason="Runs only on Windows")
-runsOnlyOnLinux = pytest.mark.skipif(
-    not (sys.platform == 'linux'), reason="Runs only on Linux")
 
 
 def test_pytest_artifacts_no_arguments(testdir):
