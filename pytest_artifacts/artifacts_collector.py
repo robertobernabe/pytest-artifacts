@@ -1,10 +1,6 @@
 import os
 import glob
 import zipfile
-import logging
-from py._path.local import LocalPath
-
-log = logging.getLogger()
 
 
 class ArtifactCollector(object):
@@ -16,7 +12,6 @@ class ArtifactCollector(object):
         return glob.glob(searchPattern)
 
     def add_search_pattern(self, searchPattern):
-        log.debug("add searchpattern %s" % searchPattern)
         self.lookupPlanGlob.append(searchPattern)
 
     def collect_using_glob(self):
@@ -46,11 +41,4 @@ def human_readable_size(size):
 
 
 if __name__ == '__main__':
-    logFileCollector = ArtifactCollector()
-    logFileCollector.add_search_pattern(r"C:\ProgramData\Avira\*\LOGFILES\*.log")
-    logFileCollector.add_search_pattern(r"C:\ProgramData\Avira\*\JOBS\*.avj")
-    c = []
-    for collection in logFileCollector.collect_using_glob():
-        c.extend(collection)
-
-    logFileCollector.zip_artifact_collection(r"c:\tmp\test.zip", c)
+    pass
