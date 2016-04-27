@@ -28,7 +28,7 @@ This command line will run tests located in `tests\` and collect all files with 
     collected 0 items
     
     Collected the following artifacts: ['C:\\ProgramData\\Dropbox\\Update\\Log\\DropboxUpdate.log-2016-04-27-10-17-00-081-9024-finished', 'C:\\ProgramData\\Dropbox\\Update\\Log\\DropboxUpdate.log-2016-04-27-11-17-00-064-11620-finished']
-    Copied artifacts to C:\Users\User\tmp\pytest-artifacts\pytest-artifacts
+    Copied artifacts to C:\Users\User\tmp\pytest-artifacts
     ======================== no tests ran in 0.07 seconds =========================
 
 
@@ -43,5 +43,5 @@ You are also able to compress the found artifacts with `--compress-artifacts`
     collected 0 items
     
     Collected the following artifacts: ['C:\\ProgramData\\Dropbox\\Update\\Log\\DropboxUpdate.log-2016-04-27-10-17-00-081-9024-finished', 'C:\\ProgramData\\Dropbox\\Update\\Log\\DropboxUpdate.log-2016-04-27-11-17-00-064-11620-finished']
-    Compressed artifacts to C:\Users\User\tmp\pytest-artifacts\pytest-artifacts\pytest-artifacts.zip
+    Compressed artifacts to C:\Users\User\tmp\pytest-artifacts\pytest-artifacts.zip
     ======================== no tests ran in 0.11 seconds =========================
