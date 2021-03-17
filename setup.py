@@ -1,3 +1,4 @@
+import os.path
 from setuptools import setup
 from setuptools import find_packages
 
@@ -6,8 +7,8 @@ _name = "pytest-artifacts"
 _version = "2021.3.17"
 
 
-HERE = path.abspath(path.dirname(__file__))
-with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
+HERE = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join(HERE, 'README.md'), encoding='utf-8') as f:
     _long_description = f.read()
 
 _description = "Plugin for py.test to collect test artifacts"
