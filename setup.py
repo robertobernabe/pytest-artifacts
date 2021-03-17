@@ -5,6 +5,11 @@ from setuptools import find_packages
 _name = "pytest-artifacts"
 _version = "2021.3.17"
 
+
+HERE = path.abspath(path.dirname(__file__))
+with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
+    _long_description = f.read()
+
 _description = "Plugin for py.test to collect test artifacts"
 
 if __name__ == "__main__":
@@ -12,6 +17,7 @@ if __name__ == "__main__":
         name=_name,
         version=_version,
         description=_description,
+        long_description=_long_description,
         author="Florian Schaeffeler",
         author_email="hello@fschaeffeler.de",
         entry_points={
