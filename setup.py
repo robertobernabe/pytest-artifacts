@@ -19,6 +19,7 @@ if __name__ == "__main__":
         version=_version,
         description=_description,
         long_description=_long_description,
+        long_description_content_type='text/markdown',
         author="Florian Schaeffeler",
         author_email="hello@fschaeffeler.de",
         entry_points={
