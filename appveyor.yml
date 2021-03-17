@@ -15,7 +15,8 @@ environment:
 install:
   - "%PYTHON%\\python.exe -m pip install tox"
 
-build: off
+build_script:
+  - "%PYTHON%\\Scripts\\tox.exe -e build"
 
 test_script:
   - "%PYTHON%\\Scripts\\tox.exe -e unittests"
