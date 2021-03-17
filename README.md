@@ -11,7 +11,7 @@ pytest-artifacts is a plugin for [py.test](https://pytest.org) which is able to 
 
 You will need the following prerequisites in order to use pytest-artifacts:
 
-- Python 2.7, 3.4 or 3.5
+- Python 3.x
 
 
 ## Usage:
