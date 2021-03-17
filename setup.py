@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 # PACKAGE NAME AND VERSION
 _name = "pytest-artifacts"
-_version = "2021.3.17"
+_version = "2021.3.17-1"
 
 
 HERE = os.path.abspath(os.path.dirname(__file__))
