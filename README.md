@@ -1,8 +1,6 @@
 # pytest-artifacts
 [![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![Python package](https://github.com/robertobernabe/pytest-artifacts/actions/workflows/python-package.yml/badge.svg)](https://github.com/robertobernabe/pytest-artifacts/actions/workflows/python-package.yml)
-[![Build Status](https://travis-ci.org/robertobernabe/pytest-artifacts.svg?branch=master)](https://travis-ci.org/robertobernabe/pytest-artifacts)
-[![Build status](https://ci.appveyor.com/api/projects/status/u39nq236gl0xl9pf?svg=true)](https://ci.appveyor.com/project/robertobernabe/pytest-artifacts)
 
 pytest-artifacts is a plugin for [py.test](https://pytest.org) which is able to collect artifacts after the testrun.
 
