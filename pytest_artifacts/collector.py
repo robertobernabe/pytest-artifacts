@@ -26,12 +26,14 @@ def find_files(directory, pattern):
                 yield LocalPath(filePath)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import glob
+
     print(glob.glob(r"c:\tmp\*\*\*.exe"))
     import sys
+
     log.addHandler(logging.StreamHandler(stream=sys.stdout))
     log.setLevel(logging.DEBUG)
-    for filePath in find_files(os.path.expanduser("~"), r'*.exe'):
+    for filePath in find_files(os.path.expanduser("~"), r"*.exe"):
         print(filePath)
         assert filePath.isfile()

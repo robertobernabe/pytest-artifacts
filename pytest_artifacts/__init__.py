@@ -21,22 +21,22 @@ def pytest_addoption(parser):
     group.addoption(
         OPTION_COLLECT_ARTIFACTS,
         action="store",
-        metavar='pattern',
+        metavar="pattern",
         nargs="*",
         default=None,
-        help="Search for artifacts /path/to/dir/file*pattern.ext"
+        help="Search for artifacts /path/to/dir/file*pattern.ext",
     )
 
     group.addoption(
         OPTION_COMPRESS_ARTIFACTS,
         action="store_true",
         default=False,
-        help="Compress collected artifacts with zip."
+        help="Compress collected artifacts with zip.",
     )
 
 
 def pytest_configure(config):
-    """ called after command line options have been parsed
+    """called after command line options have been parsed
     and all plugins and initial conftest files been loaded.
     This hook is called for every plugin.
     """
@@ -44,7 +44,8 @@ def pytest_configure(config):
     config._artifactsZipFilename = PYTEST_ARTIFACTS_ZIP_FILENAME
     config._artifactsOutputPath = LocalPath(os.getcwd()).join(PYTEST_ARTIFACTS)
     config._artifactsZipFileOutputPath = config._artifactsOutputPath.join(
-        PYTEST_ARTIFACTS_ZIP_FILENAME)
+        PYTEST_ARTIFACTS_ZIP_FILENAME
+    )
 
 
 def pytest_sessionfinish(session, exitstatus):
@@ -70,24 +71,27 @@ def pytest_sessionfinish(session, exitstatus):
             if len(session.config._artifactsCollected) > 0:
                 a.zip_artifact_collection(
                     session.config._artifactsZipFileOutputPath,
-                    session.config._artifactsCollected)
+                    session.config._artifactsCollected,
+                )
         else:
             for artifactFilePath in session.config._artifactsCollected:
-                LocalPath(artifactFilePath).copy(
-                    session.config._artifactsOutputPath)
+                LocalPath(artifactFilePath).copy(session.config._artifactsOutputPath)
 
 
 def pytest_terminal_summary(terminalreporter):
     _ = "Collected the following artifacts: {0}".format(
-        terminalreporter.config._artifactsCollected)
+        terminalreporter.config._artifactsCollected
+    )
 
     if terminalreporter.config._artifactsZipFileOutputPath.exists():
         _ = "{0}\nCompressed artifacts to {1}".format(
-            _, terminalreporter.config._artifactsZipFileOutputPath)
+            _, terminalreporter.config._artifactsZipFileOutputPath
+        )
     else:
         if len(terminalreporter.config._artifactsCollected) > 0:
             _ = "{0}\nCopied artifacts to {1}".format(
-                _, terminalreporter.config._artifactsOutputPath)
+                _, terminalreporter.config._artifactsOutputPath
+            )
 
     terminalreporter.write_line(_)
 
