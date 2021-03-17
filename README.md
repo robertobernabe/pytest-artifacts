@@ -1,5 +1,5 @@
 # pytest-artifacts
-[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Python package](https://github.com/robertobernabe/pytest-artifacts/actions/workflows/python-package.yml/badge.svg)](https://github.com/robertobernabe/pytest-artifacts/actions/workflows/python-package.yml)
 
 pytest-artifacts is a plugin for [py.test](https://pytest.org) which is able to collect artifacts after the testrun.
@@ -14,9 +14,9 @@ You will need the following prerequisites in order to use pytest-artifacts:
 
 ## Usage:
 
-    pytest tests\
+    pytest tests\ --collect-artifacts *.txt
     
-This command line will run tests located in `tests\` and collect all files with the extension `.log` after the testrun finished.
+This command line will run tests located in `tests\` and collect all files with the extension `.txt` after the testrun finished.
   
  
      
